@@ -1,4 +1,4 @@
-# File with heading This json was tested on ubuntu 22.04 jellyfish version
+# This json was tested on ubuntu 22.04 jellyfish version
 
 The json file is to print the time execution ,this code is using time library that is need to be installed to show the time and run the code without any problem
 
