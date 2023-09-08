@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This json was tested on ubuntu 22.04 jellyfish version
-=======
 # File with heading This json was tested on ubuntu 22.04 jellyfish version
->>>>>>> 03d4cb2 (T1)
 
 The json file is to print the time execution ,this code is using time library that is need to be installed to show the time and run the code without any problem
 
