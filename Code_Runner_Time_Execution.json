@@ -1,0 +1,137 @@
+{
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+
+        "javascript": "bash -c 'start=$(date +%s.%N); node; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"'",
+        "java": "bash -c 'start=$(date +%s.%N); cd $dir && javac $fileName && java $fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "c": "bash -c 'start=$(date +%s.%N); cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt ; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "zig": "bash -c 'start=$(date +%s.%N); zig run; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "cpp": "bash -c 'start=$(date +%s.%N); cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "objective-c": "bash -c 'start=$(date +%s.%N); cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "php": "bash -c 'start=$(date +%s.%N); php; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "python": "bash -c 'start=$(date +%s.%N); python -u $fileName; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "perl": "bash -c 'start=$(date +%s.%N); perl; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "perl6": "bash -c 'start=$(date +%s.%N); perl6; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "ruby": "bash -c 'start=$(date +%s.%N); ruby; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "go": "bash -c 'start=$(date +%s.%N); go run; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "lua": "bash -c 'start=$(date +%s.%N); lua; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "groovy": "bash -c 'start=$(date +%s.%N); groovy; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "powershell": "bash -c 'start=$(date +%s.%N); powershell -ExecutionPolicy ByPass -File; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "bat": "bash -c 'start=$(date +%s.%N); cmd /c; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "shellscript": "bash -c 'start=$(date +%s.%N); bash $fileName ; end=$(date +%s.%N); runtime=$(echo \"($end - $start)\" | bc); echo \"Execution time: $runtime seconds\"'",
+        "fsharp": "bash -c 'start=$(date +%s.%N); fsi; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "csharp": "bash -c 'start=$(date +%s.%N); dotnet run $fileName; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "vbscript": "bash -c 'start=$(date +%s.%N); cscript //Nologo; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "typescript": "bash -c 'start=$(date +%s.%N); ts-node; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "coffeescript": "bash -c 'start=$(date +%s.%N); coffee; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "scala": "bash -c 'start=$(date +%s.%N); scala; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "swift": "bash -c 'start=$(date +%s.%N); swift; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "julia": "bash -c 'start=$(date +%s.%N); julia; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "crystal": "bash -c 'start=$(date +%s.%N); crystal; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "ocaml": "bash -c 'start=$(date +%s.%N); ocaml; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "r": "bash -c 'start=$(date +%s.%N); Rscript; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "applescript": "bash -c 'start=$(date +%s.%N); osascript; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "clojure": "bash -c 'start=$(date +%s.%N); lein exec; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "haxe": "bash -c 'start=$(date +%s.%N); haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "rust": "bash -c 'start=$(date +%s.%N); cd $dir && rustc $fileName && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "racket": "bash -c 'start=$(date +%s.%N); racket; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "scheme": "bash -c 'start=$(date +%s.%N); csi -script; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "ahk": "bash -c 'start=$(date +%s.%N); autohotkey; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "autoit": "bash -c 'start=$(date +%s.%N); autoit3; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "dart": "bash -c 'start=$(date +%s.%N); dart; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "pascal": "bash -c 'start=$(date +%s.%N); cd $dir && fpc $fileName && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "d": "bash -c 'start=$(date +%s.%N); cd $dir && dmd $fileName && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "haskell": "bash -c 'start=$(date +%s.%N); runghc; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "nim": "bash -c 'start=$(date +%s.%N); nim compile --verbosity:0 --hints:off --run; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "lisp": "bash -c 'start=$(date +%s.%N); sbcl --script; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "kit": "bash -c 'start=$(date +%s.%N); kitc --run; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "v": "bash -c 'start=$(date +%s.%N); v run; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "sass": "bash -c 'start=$(date +%s.%N); sass --style expanded; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "scss": "bash -c 'start=$(date +%s.%N); scss --style expanded; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "less": "bash -c 'start=$(date +%s.%N); cd $dir && lessc $fileName $fileNameWithoutExt.css; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "FortranFreeForm": "bash -c 'start=$(date +%s.%N); cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "fortran-modern": "bash -c 'start=$(date +%s.%N); cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "fortran_fixed-form": "bash -c 'start=$(date +%s.%N); cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "fortran": "bash -c 'start=$(date +%s.%N); cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        "sml": "bash -c 'start=$(date +%s.%N); cd $dir && sml $fileName; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' "
+        
+    },
+    "code-runner.executorMapByFileExtension": {
+
+        ".vb": "bash -c 'start=$(date +%s.%N); cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"'  ",
+        ".vbs": "cscript //Nologo",
+        ".scala": "scala",
+        ".jl": "julia",
+        ".cr": "crystal",
+        ".ml": "ocaml",
+        ".zig": "zig run",
+        ".exs": "elixir",
+        ".hx": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        ".rkt": "racket",
+        ".scm": "csi -script",
+        ".ahk": "autohotkey",
+        ".au3": "autoit3",
+        ".kt": "bash -c 'start=$(date +%s.%N); cd $dir && kotlinc $fileName -include-runtime -d $fileNameWithoutExt.jar && java -jar $fileNameWithoutExt.jar; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        ".kts": "kotlinc -script",
+        ".dart": "dart",
+        ".pas": "bash -c 'start=$(date +%s.%N); cd $dir && fpc $fileName && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        ".pp": "bash -c 'start=$(date +%s.%N); cd $dir && fpc $fileName && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        ".d": "bash -c 'start=$(date +%s.%N); cd $dir && dmd $fileName && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        ".hs": "runhaskell",
+        ".nim": "nim compile --verbosity:0 --hints:off --run",
+        ".csproj": "dotnet run --project",
+        ".fsproj": "dotnet run --project",
+        ".lisp": "sbcl --script",
+        ".kit": "kitc --run",
+        ".v": "v run",
+        ".vsh": "v run",
+        ".sass": "sass --style expanded",
+        ".cu": "bash -c 'start=$(date +%s.%N); cd $dir && nvcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' ",
+        ".ring": "ring",
+        ".sml": "bash -c 'start=$(date +%s.%N); cd $dir && sml $fileName ; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' "
+        
+    },
+    "code-runner.executorMapByGlob": {
+
+
+        "pom.xml": "bash -c 'start=$(date +%s.%N); cd $dir && mvn clean package; end=$(date +%s.%N); runtime=$(echo \"$end - $start\" | bc); echo \"Execution time: $runtime seconds\"' "
+    },
+    "code-runner.languageIdToFileExtensionMap": {
+
+        "bat": ".bat",
+        "powershell": ".ps1",
+        "typescript": ".ts"
+        
+    },
+    "code-runner.fileDirectoryAsCwd": true,
+
+
+    "terminal.integrated.profiles.linux": {
+        
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash",
+            "command": "bash",
+            "args": ["-c", "time -p $0"],
+            "overrideName": true
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "git.autofetch": true,
+    "git.useEditorAsCommitInput": false,
+    "editor.inlineSuggest.showToolbar": "always"
+}
